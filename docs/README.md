@@ -137,4 +137,5 @@ roslaunch carla_autoware_agent carla_autoware_agent.launch town:=Town01 host:=17
 ![avatar](./autoware2.png)
 
 ### 5. 遗留问题
-Autoware和Carla可以集成起来，在docker中生成的车辆，在carla可以看到，且地图可以同步，但目前还车辆还不能自动规划和运动，这个问题应当是carla-autoware最近更新导致的，目前还没找到问题的根源，这些问题在github上也暂未解决，可能需要切换到较低版本，可参考 [issue1](https://github.com/carla-simulator/carla-autoware/issues/88), [issue2](https://github.com/carla-simulator/carla-autoware/issues/84), 此问题解决后会更新此文档。
+Autoware和Carla可以集成起来，在docker中生成的车辆，在carla可以看到，且地图可以同步，但目前车辆还不能自动规划，这个问题应当是carla-autoware最近更新导致的，目前还没找到问题的根源，这些问题在github上也暂未解决，可能需要切换到较低版本，可参考 [issue1](https://github.com/carla-simulator/carla-autoware/issues/88), [issue2](https://github.com/carla-simulator/carla-autoware/issues/84), 此问题解决后会更新此文档。
+
