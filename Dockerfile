@@ -6,7 +6,7 @@ USER autoware
 WORKDIR /home/autoware
 
 # Update simulation repo to latest master.
-RUN git clone --recurse-submodules https://github.com.cnpmjs.org/charles-lei/carla-autoware.git
+RUN git clone --recurse-submodules https://github.com/charles-lei/carla-autoware.git
 # This will pull very large map data, and may take a long time
 RUN sudo apt update && sudo apt upgrade && sudo apt-get install git-lfs \
     && cd carla-autoware \
