@@ -9,7 +9,7 @@ WORKDIR /home/autoware
 # Update simulation repo to latest master.
 RUN git clone --recurse-submodules https://github.com/charles-lei/carla-autoware.git
 # This will pull very large map data, and may take a long time
-RUN sudo apt-get update && sudo apt upgrade && sudo apt-get install -y --no-install-recommends git-lfs \
+RUN sudo apt-get update && sudo apt upgrade -y --no-install-recommends && sudo apt-get install -y --no-install-recommends git-lfs \
     && cd carla-autoware \
     && git checkout 0.9.10 \
     && cp update_sim.patch ~/Autoware/ \
