@@ -1,7 +1,8 @@
 ARG AUTOWARE_VERSION=1.14.0-melodic-cuda
 FROM autoware/autoware:$AUTOWARE_VERSION
 RUN sed -i 's#http://archive.ubuntu.com/#http://mirrors.tuna.tsinghua.edu.cn/#' /etc/apt/sources.list \
-    && sed -i 's#https#http#' /etc/apt/sources.list.d/cuda.list
+    && mv /etc/apt/sources.list.d/cuda.list  /etc/apt/ \
+    && mv /etc/apt/sources.list.d/nvidia-ml.list /etc/apt/ 
 USER autoware
 WORKDIR /home/autoware
 
