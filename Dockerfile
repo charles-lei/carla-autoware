@@ -49,7 +49,7 @@ RUN cd carla_ws/src \
 RUN echo "export CARLA_AUTOWARE_CONTENTS=~/autoware-contents" >> .bashrc \
     && echo "source ~/carla_ws/devel/setup.bash" >> .bashrc \
     && echo "source ~/Autoware/install/setup.bash" >> .bashrc \
-    && echo "export ROS_HOSTNAME=localhost"
+    && echo "export ROS_HOSTNAME=localhost" >> .bashrc
 
 CMD ["/bin/bash"]
 
