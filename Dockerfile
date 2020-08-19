@@ -9,7 +9,7 @@ WORKDIR /home/autoware
 # Update simulation repo to latest master.
 RUN git clone --recurse-submodules https://github.com/charles-lei/carla-autoware.git
 # This will pull very large map data, and may take a long time
-RUN sudo apt-get update && sudo apt upgrade -y --no-install-recommends && sudo apt-get install -y --no-install-recommends git-lfs \
+RUN sudo apt-get update && sudo apt-get install -y --no-install-recommends git-lfs \
     && cd carla-autoware \
     && git checkout 0.9.10 \
     && cp update_sim.patch ~/Autoware/ \
@@ -46,7 +46,8 @@ RUN cd carla_ws/src \
     && cd .. \
     && source /opt/ros/melodic/setup.bash && catkin_make
 
-RUN echo "export CARLA_AUTOWARE_CONTENTS=~/autoware-contents" >> .bashrc \
+RUN ln -s carla-autoware/autoware-contents \
+    && echo "export CARLA_AUTOWARE_CONTENTS=~/autoware-contents" >> .bashrc \
     && echo "source ~/carla_ws/devel/setup.bash" >> .bashrc \
     && echo "source ~/Autoware/install/setup.bash" >> .bashrc \
     && echo "export ROS_HOSTNAME=localhost" >> .bashrc

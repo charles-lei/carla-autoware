@@ -4,8 +4,7 @@ XSOCK=/tmp/.X11-unix
 XAUTH=$HOME/.Xauthority
 
 VOLUMES="--volume=$XSOCK:$XSOCK:rw
-         --volume=$XAUTH:$XAUTH:rw
-         --volume=$(pwd)/autoware-contents:/home/autoware/autoware-contents:ro"
+         --volume=$XAUTH:$XAUTH:rw"
 
 RUNTIME=""
 DOCKER_VERSION=$(docker version --format '{{.Client.Version}}' | cut --delimiter=. --fields=1,2)

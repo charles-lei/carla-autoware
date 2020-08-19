@@ -106,7 +106,7 @@ sudo chmod g+rwx "/home/$USER/.docker" -R
 * Autoware：用于感知/规划/控制算法
 * ROS：机器人操作系统/实时通讯框架/通讯协议
 * ROS Bridge-用于autoware与calar之间的通讯
-* Carla-Autoware：封装了ros bridge，并提供了一个与autoware集成的示例（用代码封装了autoware的设置过程）
+* Carla-Autoware：提供了一个与autoware集成的示例（用代码封装了autoware的设置过程）
 
 为了更好的理解这些组件的关系，下图可作为一个参考：
 ![avatar](./carla_autoware.png)
