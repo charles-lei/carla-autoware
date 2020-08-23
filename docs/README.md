@@ -60,6 +60,8 @@ cd ~/CARLA_0.9.10_pre_release
 # 可以不加SDL_VIDEODRIVER参数，这个参数使得carla不显示界面
 SDL_VIDEODRIVER=offscreen ./CarlaUE4.sh -opengl
 
+# Carla_0.9.10版本貌似还有bug，有时候会crash，如果上述命令运行出错，可以尝试以下方式
+./CarlaUE4.sh -vulkun
 ```
 再打开一个新窗口，尝试运行一个示例:
 ```bash
@@ -137,5 +139,5 @@ roslaunch carla_autoware_agent carla_autoware_agent.launch town:=Town01 host:=17
 ![avatar](./autoware2.png)
 
 ### 5. 遗留问题
-Autoware和Carla可以集成起来，在docker中生成的车辆，在carla可以看到，且地图可以同步，但目前车辆还不能自动规划，这个问题应当是carla-autoware最近更新导致的，目前还没找到问题的根源，这些问题在github上也暂未解决，可能需要切换到较低版本，可参考 [issue1](https://github.com/carla-simulator/carla-autoware/issues/88), [issue2](https://github.com/carla-simulator/carla-autoware/issues/84), 此问题解决后会更新此文档。
-
+Autoware和Carla可以集成起来，在docker中生成的车辆，在carla可以看到，且地图可以同步，但目前还车辆还不能自动规划和运动，这个问题应当是carla-autoware最近更新导致的，目前还没找到问题的根源，这些问题在github上也暂未解决，可能需要切换到较低版本，可参考 [issue1](https://github.com/carla-simulator/carla-autoware/issues/88), [issue2](https://github.com/carla-simulator/carla-autoware/issues/84), 此问题解决后会更新此文档。
+更新：经测试，安装合适的CUDA之后上述问题会解决，可参考[CUDA安装](https://www.jianshu.com/p/964aa01a710f)
