@@ -48,12 +48,8 @@ git clone --recurse-submodules https://github.com.cnpmjs.org/carla-simulator/car
 ### 1. 安装Carla（IP:172.16.202.235)
 有多种方式可以[安装Carla](https://carla.readthedocs.io/en/latest/build_linux/#requirements)，推荐直接下载二进制程序，参考[这里](https://github.com/carla-simulator/carla/blob/master/Docs/download.md).
 
-为了保证和后面的一系列环境兼容，最好下载本文实验成功的版本：[0.9.10_pre_release](https://carla-releases.s3.eu-west-3.amazonaws.com/Linux/CARLA_0.9.10-Pre_Ubuntu18.tar.gz)， 完成后解压到: **~/CARLA_0.9.10_pre_release**, 然后设置以下环境变量：
+为了保证和后面的一系列环境兼容，最好下载本文实验成功的版本：[0.9.10_pre_release](https://carla-releases.s3.eu-west-3.amazonaws.com/Linux/CARLA_0.9.10-Pre_Ubuntu18.tar.gz)， 完成后解压到: **~/CARLA_0.9.10_pre_release**。
 
-```bash
-# 这个环境变量跟Carla客户端服务端通信连接有关，如果不配置，会有 cannot import module 'Carla' 之类的错误
-export PYTHONPATH=$PYTHONPATH:~/CARLA_0.9.10_pre_release/PythonAPI/carla/dist/carla-0.9.10-py2.7-linux-x86_64.eggz:~/CARLA_0.9.10_pre_release/PythonAPI/carla/
-```
 完成以后可以尝试运行Carla：
 ```bash
 cd ~/CARLA_0.9.10_pre_release
@@ -67,6 +63,10 @@ SDL_VIDEODRIVER=offscreen ./CarlaUE4.sh -opengl
 ```bash
 # 安装python依赖
 pip install -i https://pypi.tuna.tsinghua.edu.cn/simple pygame networkx
+
+# 这个环境变量跟Carla客户端服务端通信连接有关，如果不配置，会有 cannot import module 'Carla' 之类的错误
+export PYTHONPATH=$PYTHONPATH:~/CARLA_0.9.10_pre_release/PythonAPI/carla/dist/carla-0.9.10-py2.7-linux-x86_64.egg:~/CARLA_0.9.10_pre_release/PythonAPI/carla/
+
 cd ~/CARLA_0.9.10_pre_release/PythonAPI/examples
 ./automatic_control.py
 
@@ -96,7 +96,7 @@ sudo gpasswd -a ${USER} docker
 # 重启docker服务
 sudo systemctl restart docker
 
-## 更改docker配置文件权限
+## 更改docker配置文件权限（如果没有配置文件可以不用管）
 sudo chown "$USER":"$USER" /home/"$USER"/.docker -R
 sudo chmod g+rwx "/home/$USER/.docker" -R
 ```
